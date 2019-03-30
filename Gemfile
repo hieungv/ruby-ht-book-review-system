@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source "http://rubygems.org"
 git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 gem "bootsnap", ">= 1.1.0", require: false
@@ -21,6 +21,7 @@ gem "rails", "~> 5.2.2", ">= 5.2.2.1"
 gem "rails-i18n"
 gem "rails-jquery-autocomplete"
 gem "ransack"
+gem "rolify"
 gem "rubocop", "~> 0.54.0", require: false
 gem "sass-rails", "~> 5.0"
 gem "social-share-button"

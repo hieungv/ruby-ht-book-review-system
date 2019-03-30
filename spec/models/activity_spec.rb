@@ -7,4 +7,5 @@ RSpec.describe Activity, type: :model do
     it {is_expected.to have_many(:comments).dependent :destroy}
     it {is_expected.to have_many(:likes).dependent :destroy}
   end
+
 end

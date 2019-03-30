@@ -54,15 +54,29 @@
                 </li>
               </ul>
             </li>
-            <li class="ml-xl-3 login">
-              <%= link_to "#" do%>
-                <span class="border-left pl-xl-4"></span>
-                <%= t ".sign_in"%>
-              <% end %>
+            <% if user_signed_in? %>
+                <li class="has-children">
+              <%= link_to "User", "#" %>
+              <ul class="dropdown">
+                <li>
+                  <%= link_to "Change your password", edit_user_registration_path %>
+                </li>
+                <li>
+                  <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+                </li>
+              </ul>
             </li>
-            <li>
-              <%= link_to t(".register"), "#" %>
-            </li>
+            <% else %>
+              <li class="ml-xl-3 login">
+                <%= link_to new_user_session_path do%>
+                  <span class="border-left pl-xl-4"></span>
+                  <%= t ".sign_in"%>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to t(".register"), new_user_registration_path %>
+              </li>
+            <% end %>
           </ul>
         </nav>
       </div>

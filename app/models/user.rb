@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  rolify
   has_one :user_profile
   has_many :active_relationships, class_name: Relationship.name,
     foreign_key: "follower_id", dependent: :destroy
@@ -11,11 +12,17 @@ class User < ApplicationRecord
   has_many :comments
   has_many :likes
   has_many :activities
-  devise :database_authenticatable, :registerable, :confirmable, :lockable,
-    :recoverable, :rememberable, :validatable
+  devise :database_authenticatable, :registerable, :lockable,
+    :recoverable, :rememberable, :validatable, :confirmable
   accepts_nested_attributes_for :user_profile
 
   def recent_activities limit
     activities.order("created_at DESC").limit limit
   end
+
+  protected
+
+    def confirmation_required?
+      false
+    end
 end

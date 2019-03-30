@@ -1,6 +1,5 @@
 $cyan: #30e3ca;
 $white-transparent: rgba(255, 255, 255, 0.95);
-
 #bg-site-blocks {
   background-image: url("hero_2.jpg");
 }
@@ -29,4 +28,9 @@ $white-transparent: rgba(255, 255, 255, 0.95);
 
 .lh-content {
   background: $white-transparent;
+  color: #30e3ca;
+}
+
+.lh-content {
+  background: rgba(255, 255, 255, 0.95);
 }
