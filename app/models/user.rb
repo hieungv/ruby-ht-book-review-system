@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  devise :database_authenticatable, :registerable,
+    :recoverable, :rememberable, :validatable
   has_one :user_profile
   has_many :active_relationships, class_name: Relationship.name,
     foreign_key: "follower_id", dependent: :destroy
@@ -12,8 +14,6 @@ class User < ApplicationRecord
   has_many :likes
   has_many :activities
 
-  devise :database_authenticatable, :registerable, :confirmable, :lockable,
-    :recoverable, :rememberable, :validatable
   accepts_nested_attributes_for :user_profile
 
   def recent_activities limit

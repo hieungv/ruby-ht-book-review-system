@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :set_locale
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   private
 
@@ -22,5 +23,11 @@ class ApplicationController < ActionController::Base
     else
       root_path
     end
+  end
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :password, :password_confirmation, {user_profile_attributes: [:name]}])
   end
 end

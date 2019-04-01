@@ -88,3 +88,11 @@ vi:
     home:
       index:
         home_page: Trang chủ
+  users:
+    password: "Mật khẩu"
+    password_confirmation: "Xác nhận mật khẩu"
+    characters_minimum: " Tối thiểu 6 ký tự"
+  login: "Đăng nhập"
+  signup: "Đăng ký"
+  signin_with: "Đăng nhập với %{OmniAuth::Utils.camelize(provider)}"
+  forgot_your_password: "Quên mật khẩu"

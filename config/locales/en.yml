@@ -88,3 +88,11 @@ en:
     home:
       index:
         home_page: Home page
+  users:
+    password: "Password"
+    password_confirmation: "Confirmation"
+    characters_minimum: "6 characters minimum"
+  login: "Log in"
+  signup: "Sign up"
+  signin_with: "Sign in with %{OmniAuth::Utils.camelize(provider)}"
+  forgot_your_password: "Forgot your password"
