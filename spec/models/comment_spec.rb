@@ -1,3 +1,8 @@
 RSpec.describe Comment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject {FactoryBot.create :comment}
+
+  context "associations" do
+    it {is_expected.to belong_to :commentable}
+    it {is_expected.to belong_to :user}
+  end
 end

@@ -7,5 +7,9 @@ FactoryBot.define do
     trait :admin do
       admin {true}
     end
+    trait :orther_user do
+      sequence(:email){Faker::Internet.email}
+      password {"123123"}
+    end
   end
 end

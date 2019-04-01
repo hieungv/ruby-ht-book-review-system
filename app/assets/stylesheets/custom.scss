@@ -19,17 +19,14 @@ $white-transparent: rgba(255, 255, 255, 0.95);
 .icon .statistical {
   height: 45px;
   width: auto;
-<<<<<<< HEAD
-  color: #30e3ca;
+  color: $cyan;
 }
 
 .lh-content {
   background: rgba(255, 255, 255, 0.95);
-=======
   color: $cyan;
 }
 
 .lh-content {
   background: $white-transparent;
->>>>>>> Create layout
 }

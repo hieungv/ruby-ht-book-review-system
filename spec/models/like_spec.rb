@@ -1,3 +1,8 @@
 RSpec.describe Like, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject {FactoryBot.create :like}
+
+  context "associations" do
+    it {is_expected.to belong_to :user}
+    it {is_expected.to belong_to :activity}
+  end
 end
