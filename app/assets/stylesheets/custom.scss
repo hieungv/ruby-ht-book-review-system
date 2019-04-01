@@ -1,3 +1,6 @@
+$cyan: #30e3ca;
+$white-transparent: rgba(255, 255, 255, 0.95);
+
 #bg-site-blocks {
   background-image: url("hero_2.jpg");
 }
@@ -16,9 +19,17 @@
 .icon .statistical {
   height: 45px;
   width: auto;
+<<<<<<< HEAD
   color: #30e3ca;
 }
 
 .lh-content {
   background: rgba(255, 255, 255, 0.95);
+=======
+  color: $cyan;
+}
+
+.lh-content {
+  background: $white-transparent;
+>>>>>>> Create layout
 }
