@@ -134,6 +134,16 @@ en:
       edit: Edit
   users:
     registrations:
+      edit:
+        home_page: "Change password"
+        current_password: "Current password"
+        password: "Password"
+        text_password: "(we need your current password to confirm your changes)"
+        text_new_password: "(leave blank if you don't want to change it)"
+        password_confirmation: "Confirmation"
+        characters_minimum: "6 characters minimum"
+        btn_update: "Update"
+        btn_back: "Back"
       new:
         password: "Password"
         password_confirmation: "Confirmation"

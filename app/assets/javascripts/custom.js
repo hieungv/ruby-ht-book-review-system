@@ -25,3 +25,26 @@ var preview_image = function () {
 };
 $(document).ready(preview_image);
 $(document).on("turbolinks:load", preview_image);
+
+$(function() {
+$('.review-rating').raty({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
+
+$('#rating-form').raty({
+  path: '/assets/',
+  scoreName: 'review[rate]'
+  });
+
+$('.average-review-rating').raty({
+    readOnly: true,
+    path: '/assets/',
+    score: function() {
+      return $(this).attr('data-score')
+    }
+  });
+})

@@ -1,0 +1,20 @@
+<%= form_for([@book, @book.reviews.build]) do |f| %>
+ <a onclick="myFunction()">
+  <div id="rating-form" >
+  </div>
+</a>
+
+  <div id="myDIV" style="display: none">
+    <%= f.text_area :content, class: "form-control animated", cols: "50", rows: "5",
+      id: "new-review", name: "comment", placeholder: "Enter your review here..."  %>
+    <%= f.button :submit, class: "btn-custom2" %>
+  </div>
+<% end %>
+<script>
+  function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  }
+}
+</script>

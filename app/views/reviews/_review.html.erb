@@ -1,0 +1,18 @@
+<% if @reviews.blank? %>
+  <h3>No reviews just yet, would you like to add the first!</h3>
+  <%= link_to "Write Review", new_book_review_path(@book), class: "btn btn-danger" %>
+<% else %>
+  <% @reviews.each do |review| %>
+    <div class="review-rating" data-score="<%= review.rate %>"></div>
+      <p><%= review.content %></p>
+        <% if user_signed_in? %>
+          <% if review.user_id == current_user.id %>
+          <div class="links btn-group">
+            <%= link_to "Edit", edit_book_path(@book), class: "btn btn-custom" %>
+            <%= link_to "Delete", book_path(@book), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-custom" %>
+          </div>
+          <% end %>
+        <% end %>
+
+  <% end %>
+<% end %>

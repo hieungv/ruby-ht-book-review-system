@@ -1,15 +1,26 @@
 class BooksController < ApplicationController
   authorize_resource
   before_action :get_categories, only: %i(index new create edit update)
-  before_action :get_book, only: %i(edit update)
+  before_action :get_book, only: %i(edit show update)
 
   def index
     @books = Book.includes(:category).page(params[:page])
                  .per Settings.book_in_page
   end
 
+  def show
+    @reviews = Review.where(book_id: @book.id).order("created_at DESC")
+    @average_review1 = Review.sum(:rate)
+
+    if @reviews.blank?
+      @average_review = 0
+    else
+      @average_review = @reviews.average(:rate).round(2)
+    end
+  end
+
   def new
-    @book = Book.new
+    @book = current_user.books.build
   end
 
   def create
