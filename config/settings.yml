@@ -1,0 +1,4 @@
+name_maximum: 100
+string_maximum: 255
+min_date: 1900-01-01
+max_date: 2100-01-01
