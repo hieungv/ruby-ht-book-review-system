@@ -3,7 +3,7 @@ class CreateBooks < ActiveRecord::Migration[5.2]
     create_table :books do |t|
       t.string :title
       t.string :cover_image
-      t.text :desciption
+      t.text :description
       t.datetime :publish_date
       t.integer :number_pages
       t.integer :price

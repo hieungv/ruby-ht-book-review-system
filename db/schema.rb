@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_03_31_105355) do
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.string "cover_image"
-    t.text "desciption"
+    t.text "description"
     t.datetime "publish_date"
     t.integer "number_pages"
     t.integer "price"
